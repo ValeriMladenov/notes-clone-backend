@@ -50,6 +50,15 @@ export const Mutation = mutationType({
           },
         });
 
+        await ctx.prisma.note.create({
+          data: {
+            title: "Welcome!",
+            content: "Welcome!",
+            published: true,
+            user: { connect: { id: created.id } },
+          },
+        });
+
         return {
           token: sign({ userId: created.id }, process.env.JWT_SECRET),
           user: created,
