@@ -1,4 +1,4 @@
-import { intArg, queryType, stringArg } from "@nexus/schema";
+import { intArg, queryType } from "@nexus/schema";
 
 import { getUserId, isAuth } from "../../utils";
 
@@ -34,7 +34,7 @@ export const Query = queryType({
         return notes;
       },
     });
-    
+
     t.field("note", {
       type: "Note",
       nullable: true,

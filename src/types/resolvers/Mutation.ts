@@ -22,16 +22,6 @@ export const UserInputType = inputObjectType({
     t.string("statusMessage");
   },
 });
-
-export const UserUpdateInputType = inputObjectType({
-  name: "UserUpdateInput",
-  definition(t) {
-    t.string("email");
-    t.string("name");
-    t.string("statusMessage");
-  },
-});
-
 export const Mutation = mutationType({
   definition(t) {
     t.field("signUp", {
