@@ -30,7 +30,6 @@ type Note {
 
 type Query {
   feed: [Note!]!
-  filterNotes(searchString: String): [Note!]!
   loadUser: User
   note(id: Int): Note
 }
@@ -42,7 +41,6 @@ type User {
   id: String!
   name: String
   notes: [Note!]!
-  photoURL: String
   updatedAt: DateTime!
 }
 

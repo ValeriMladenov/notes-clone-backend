@@ -34,33 +34,7 @@ export const Query = queryType({
         return notes;
       },
     });
-
-    t.list.field("filterNotes", {
-      type: "Note",
-      args: {
-        searchString: stringArg({ nullable: true }),
-      },
-      resolve: (parent, { searchString }, ctx) => {
-        isAuth(ctx);
-        return ctx.prisma.note.findMany({
-          where: {
-            OR: [
-              {
-                title: {
-                  contains: searchString,
-                },
-              },
-              {
-                content: {
-                  contains: searchString,
-                },
-              },
-            ],
-          },
-        });
-      },
-    });
-
+    
     t.field("note", {
       type: "Note",
       nullable: true,

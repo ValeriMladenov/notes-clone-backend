@@ -4,7 +4,7 @@ import { Request } from "apollo-server";
 const prisma = new PrismaClient();
 
 export interface Context {
-  request: Request & any;
+  request: Request & unknown;
   prisma: PrismaClient;
   appSecret: string;
 }

@@ -6,7 +6,6 @@ export const User = objectType({
     t.model.id();
     t.model.email();
     t.model.name();
-    t.model.photoURL();
     t.model.createdAt();
     t.model.updatedAt();
     t.model.deletedAt();
